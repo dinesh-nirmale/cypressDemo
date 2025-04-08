@@ -21,5 +21,6 @@ describe(`Test Suite: `, function() {
         cy.get('@firstBtn')
           .should('have.class', 'btn-success')
           .and('contain', 'Changed')
+        cy.wait(2000);
       })
 })

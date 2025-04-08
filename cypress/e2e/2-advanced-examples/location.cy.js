@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+const url = Cypress.config('baseUrl');
 context('Location', () => {
   beforeEach(() => {
     cy.visit('/commands/location')
@@ -14,10 +15,10 @@ context('Location', () => {
     // https://on.cypress.io/location
     cy.location().should((location) => {
       expect(location.hash).to.be.empty
-      expect(location.href).to.eq('/commands/location')
+      expect(location.href).to.eq(`${url}/commands/location`)
       expect(location.host).to.eq('example.cypress.io')
       expect(location.hostname).to.eq('example.cypress.io')
-      expect(location.origin).to.eq('')
+      expect(location.origin).to.eq(`${url}`)
       expect(location.pathname).to.eq('/commands/location')
       expect(location.port).to.eq('')
       expect(location.protocol).to.eq('https:')
@@ -27,6 +28,6 @@ context('Location', () => {
 
   it('cy.url() - get the current URL', () => {
     // https://on.cypress.io/url
-    cy.url().should('eq', '/commands/location')
+    cy.url().should('eq', `${url}/commands/location`)
   })
 })

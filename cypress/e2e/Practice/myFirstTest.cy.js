@@ -1,6 +1,6 @@
 describe(`Test Suite: `, function() {
     beforeEach(() => {
-        cy.visit('https://example.cypress.io/commands/aliasing')
+        cy.visit('/commands/aliasing')
       })
     
       it('.as() - alias a DOM element for later use', () => {
